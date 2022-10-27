@@ -1,13 +1,12 @@
 package com.platzi.markert.domain;
 
 public class Product {
-
     private int productId;
     private String name;
     private int categoryId;
-    private Double price;
+    private double price;
     private int stock;
-    private Boolean active;
+    private boolean active;
     private Category category;
 
     public int getProductId() {
@@ -34,11 +33,11 @@ public class Product {
         this.categoryId = categoryId;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -50,11 +49,11 @@ public class Product {
         this.stock = stock;
     }
 
-    public Boolean getActive() {
+    public boolean isActive() {
         return active;
     }
 
-    public void setActive(Boolean active) {
+    public void setActive(boolean active) {
         this.active = active;
     }
 

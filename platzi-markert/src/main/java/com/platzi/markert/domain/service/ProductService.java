@@ -10,28 +10,28 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
-
     @Autowired
     private ProductRepository productRepository;
 
-    public List<Product> getAll(){
+    public List<Product> getAll() {
         return productRepository.getAll();
     }
-    public Optional<Product> getProduct (int ProductId){
-        return productRepository.getProductById(ProductId);
+
+    public Optional<Product> getProduct(int productId) {
+        return productRepository.getProduct(productId);
     }
-    public Optional<List<Product>> getByCategory (int CategoryId){
-        return productRepository.getByCategory(CategoryId);
+
+    public Optional<List<Product>> getByCategory(int categoryId) {
+        return productRepository.getByCategory(categoryId);
     }
-    public Optional<List<Product>> getScaresProducts (int quantity, boolean active){
-        return productRepository.getScaresProducts(quantity,active);
+
+    public Product save(Product product) {
+        return productRepository.save(product);
     }
-    public  Product save (Product product){
-        return  productRepository.save(product);
-    }
-    public Boolean delete (int ProductId){
-        return getProduct(ProductId).map(product -> {
-            productRepository.delete(ProductId);
+
+    public boolean delete(int productId) {
+        return getProduct(productId).map(product -> {
+            productRepository.delete(productId);
             return true;
         }).orElse(false);
     }
