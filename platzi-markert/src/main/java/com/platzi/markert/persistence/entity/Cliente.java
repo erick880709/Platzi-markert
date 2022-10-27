@@ -4,26 +4,21 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table (name="Clientes")
+@Table(name="clientes")
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
-
     private String nombre;
-
     private String apellidos;
-
-    private Integer celular;
-
+    private Long celular;
     private String direccion;
 
-    @OneToMany(mappedBy = "clientes")
-    private List<Compra> compras;
-
-    @Column (name="correo_electronico")
+    @Column(name="correo_electronico")
     private String correoElectronico;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compras;
 
     public String getId() {
         return id;
@@ -49,11 +44,11 @@ public class Cliente {
         this.apellidos = apellidos;
     }
 
-    public Integer getCelular() {
+    public Long getCelular() {
         return celular;
     }
 
-    public void setCelular(Integer celular) {
+    public void setCelular(Long celular) {
         this.celular = celular;
     }
 
@@ -71,5 +66,13 @@ public class Cliente {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
     }
 }
