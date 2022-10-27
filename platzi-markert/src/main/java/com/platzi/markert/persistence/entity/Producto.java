@@ -3,7 +3,7 @@ package com.platzi.markert.persistence.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="productos")
+@Table(name = "productos")
 public class Producto {
 
     @Id

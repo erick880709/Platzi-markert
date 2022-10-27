@@ -3,8 +3,8 @@ package com.platzi.markert.domain;
 public class PurchaseItem {
     private int productId;
     private int quantity;
-    private Double total;
-    private Boolean state;
+    private double total;
+    private boolean active;
 
     public int getProductId() {
         return productId;
@@ -22,19 +22,19 @@ public class PurchaseItem {
         this.quantity = quantity;
     }
 
-    public Double getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 
-    public Boolean getState() {
-        return state;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setState(Boolean state) {
-        this.state = state;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

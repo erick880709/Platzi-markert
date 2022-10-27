@@ -16,16 +16,15 @@ public interface PurchaseMapper {
             @Mapping(source = "idCompra", target = "purchaseId"),
             @Mapping(source = "idCliente", target = "clientId"),
             @Mapping(source = "fecha", target = "date"),
-            @Mapping(source = "comentario", target = "comment"),
             @Mapping(source = "medioPago", target = "paymentMethod"),
+            @Mapping(source = "comentario", target = "comment"),
             @Mapping(source = "estado", target = "state"),
-            @Mapping(source = "comprasProductos", target = "item")
+            @Mapping(source = "productos", target = "items")
     })
-    Purchase toPurchase (Compra compra);
-
-    List<Purchase> toPurchases (List<Compra> compras);
+    Purchase toPurchase(Compra compra);
+    List<Purchase> toPurchases(List<Compra> compras);
 
     @InheritInverseConfiguration
-    @Mapping(target = "clientes", ignore = true)
-    Compra toCompra (Purchase purchase);
+    @Mapping(target = "cliente", ignore = true)
+    Compra toCompra(Purchase purchase);
 }
